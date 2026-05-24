@@ -4,10 +4,10 @@ import { Reveal } from "@/components/Reveal";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Alex Morgan" },
-      { name: "description", content: "About Alex Morgan — designer, recent graduate, currently looking for product design roles." },
-      { property: "og:title", content: "About — Alex Morgan" },
-      { property: "og:description", content: "About Alex Morgan — designer, recent graduate, currently looking for product design roles." },
+      { title: "About — Ayaan Rai" },
+      { name: "description", content: "About Ayaan Rai — designer, recent graduate, currently looking for product design roles." },
+      { property: "og:title", content: "About — Ayaan Rai" },
+      { property: "og:description", content: "About Ayaan Rai — designer, recent graduate, currently looking for product design roles." },
     ],
   }),
   component: About,
@@ -47,7 +47,7 @@ function About() {
             {/* EDIT: [INSERT PORTRAIT] */}
             <img
               src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1000&q=80"
-              alt="Portrait of Alex Morgan"
+              alt="Portrait of Ayaan Rai"
               loading="lazy"
               className="w-full h-full object-cover"
             />
