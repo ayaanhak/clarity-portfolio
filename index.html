@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alex Morgan — Designing for clarity. Building for people.</title>
+    <meta name="description" content="Selected works by Alex Morgan, a UI/UX designer focused on clarity and craft." />
+    <meta property="og:title" content="Alex Morgan — Portfolio" />
+    <meta property="og:description" content="Selected works by Alex Morgan, a UI/UX designer focused on clarity and craft." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Sora:wght@200;300;400&display=swap" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              background: "#F5F5F7",
+              foreground: "#1D1D1F",
+              secondary: "#ECECEE",
+              border: "#E2E2E5",
+              muted: "#86868B",
+            },
+            fontFamily: {
+              display: ["Sora", "system-ui", "sans-serif"],
+              sans: ["DM Sans", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      html { font-family: "DM Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+      body { background: #F5F5F7; color: #1D1D1F; position: relative; }
+      body::before {
+        content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1; opacity: 0.04;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+      h1, h2, h3, h4 { font-family: "Sora", system-ui, sans-serif; font-weight: 300; letter-spacing: -0.03em; }
+      .display-xl { font-family: "Sora"; font-weight: 300; letter-spacing: -0.04em; line-height: 1.02; }
+      .display-lg { font-family: "Sora"; font-weight: 300; letter-spacing: -0.035em; line-height: 1.05; }
+      .eyebrow { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.18em; color: #86868B; font-weight: 500; }
+      .reveal { opacity: 0; transform: translateY(24px); transition: opacity 1s cubic-bezier(0.22,1,0.36,1), transform 1s cubic-bezier(0.22,1,0.36,1); }
+      .reveal.is-visible { opacity: 1; transform: translateY(0); }
+      @keyframes draw-in { from { stroke-dashoffset: 200; opacity: 0; } to { stroke-dashoffset: 0; opacity: 1; } }
+      @keyframes fade-out { to { opacity: 0; visibility: hidden; } }
+      @keyframes scroll-pulse { 0%,100% { transform: translateY(0); opacity: 0.3; } 50% { transform: translateY(8px); opacity: 1; } }
+      #loader { animation: fade-out 0.6s ease-out 1.1s forwards; }
+      #loader svg path { stroke-dasharray: 200; animation: draw-in 1s cubic-bezier(0.22,1,0.36,1) forwards; }
+      .scroll-line { animation: scroll-pulse 2.4s ease-in-out infinite; }
+      .nav-link { color: #86868B; transition: color 0.3s; }
+      .nav-link:hover, .nav-link.active { color: #1D1D1F; }
+      .page { display: none; }
+      .page.active { display: block; }
+    </style>
+  </head>
+  <body class="font-sans">
+    <!-- Loader -->
+    <div id="loader" class="fixed inset-0 z-50 flex items-center justify-center bg-background">
+      <svg width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="#1D1D1F" stroke-width="1.5" stroke-linecap="round">
+        <path d="M15 60 L30 20 L45 60 M20 48 L40 48" />
+        <path d="M50 20 L50 60 M50 20 L65 20 Q72 20 72 30 Q72 40 65 40 L50 40" />
+      </svg>
+    </div>
+
+    <!-- Nav -->
+    <header class="sticky top-0 z-30 backdrop-blur bg-background/70 border-b border-border/40">
+      <nav class="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
+        <a href="#/" class="text-sm font-medium tracking-tight">Alex Morgan</a>
+        <div class="flex items-center gap-6 md:gap-10 text-sm">
+          <a href="#/" class="nav-link" data-route="/">Index</a>
+          <a href="#/works" class="nav-link" data-route="/works">Works</a>
+          <a href="#/about" class="nav-link" data-route="/about">About</a>
+          <a href="#/contact" class="nav-link" data-route="/contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="relative z-10">
+      <!-- HOME -->
+      <section class="page" data-page="/">
+        <div class="min-h-[88vh] flex flex-col justify-center px-6 md:px-10 max-w-7xl mx-auto">
+          <p class="eyebrow mb-8 reveal">Portfolio — 2025</p>
+          <h1 class="display-xl reveal" style="font-size: clamp(2.75rem, 9vw, 8.5rem)">Alex Morgan.</h1>
+          <p class="mt-8 text-lg md:text-xl text-muted max-w-xl font-light reveal">Designing for clarity. Building for people.</p>
+          <div class="mt-24 flex items-center gap-3 text-xs text-muted">
+            <span class="eyebrow">Scroll</span>
+            <span class="inline-block w-px h-10 bg-foreground/40 scroll-line"></span>
+          </div>
+        </div>
+
+        <div class="px-6 md:px-10 max-w-7xl mx-auto py-32 md:py-40">
+          <div class="flex items-end justify-between mb-16 md:mb-24">
+            <h2 class="display-lg text-3xl md:text-5xl reveal">Selected works, 2023–2025.</h2>
+            <a href="#/works" class="hidden md:inline-block text-sm text-muted hover:text-foreground border-b border-foreground/30 hover:border-foreground pb-0.5 reveal">View all</a>
+          </div>
+          <div id="featured-grid" class="grid grid-cols-1 md:grid-cols-6 gap-6 md:gap-10"></div>
+        </div>
+      </section>
+
+      <!-- WORKS -->
+      <section class="page" data-page="/works">
+        <div class="px-6 md:px-10 max-w-7xl mx-auto py-24 md:py-32">
+          <p class="eyebrow mb-6 reveal">Case studies</p>
+          <h1 class="display-xl max-w-3xl reveal" style="font-size: clamp(2.25rem, 6vw, 5rem)">Things I've designed, written, and shipped.</h1>
+          <div id="filters" class="mt-16 flex flex-wrap gap-2 md:gap-3 reveal"></div>
+          <div id="works-grid" class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14"></div>
+        </div>
+      </section>
+
+      <!-- CASE STUDY -->
+      <section class="page" data-page="/works/:slug">
+        <article id="case-study"></article>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="page" data-page="/about">
+        <div class="px-6 md:px-10 max-w-7xl mx-auto pt-16 md:pt-24 pb-24">
+          <p class="eyebrow mb-6 reveal">About</p>
+          <h1 class="display-xl max-w-3xl reveal" style="font-size: clamp(2.25rem, 6vw, 5rem)">A designer who reads, listens, and then draws.</h1>
+        </div>
+
+        <div class="px-6 md:px-10 max-w-7xl mx-auto pb-24 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
+          <div class="md:col-span-5 reveal">
+            <div class="aspect-[4/5] bg-secondary overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1000&q=80" alt="Portrait" loading="lazy" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="md:col-span-7 space-y-14">
+            <div class="reveal">
+              <p class="eyebrow mb-4">Who I am</p>
+              <p class="text-lg md:text-xl font-light leading-relaxed max-w-2xl">I'm a recent graduate from the Rhode Island School of Design with a focus on product and interaction design. I care about the parts of an interface that get used every day — the small, quiet decisions that compound into trust.</p>
+            </div>
+            <div class="reveal">
+              <p class="eyebrow mb-4">My design philosophy</p>
+              <p class="text-lg md:text-xl font-light leading-relaxed max-w-2xl">Restraint is a service to the user. The best work feels inevitable — like it was always supposed to be that way. I'm interested in making software that respects attention.</p>
+            </div>
+            <div class="reveal">
+              <p class="eyebrow mb-4">What I'm looking for</p>
+              <p class="text-lg md:text-xl font-light leading-relaxed max-w-2xl">A product team that takes craft seriously — somewhere I can learn from senior designers and engineers, and contribute thoughtful work in return.</p>
+            </div>
+            <div class="reveal">
+              <a href="resume.pdf" class="inline-flex items-center text-sm border-b border-foreground/40 hover:border-foreground pb-0.5">Download résumé (PDF)</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="px-6 md:px-10 max-w-7xl mx-auto py-20 border-t border-border/60">
+          <p class="eyebrow mb-8 reveal">Tools & practice</p>
+          <ul id="skills" class="flex flex-wrap gap-x-6 gap-y-3 text-base md:text-lg font-light max-w-4xl reveal"></ul>
+        </div>
+
+        <div class="px-6 md:px-10 max-w-7xl mx-auto py-20 border-t border-border/60">
+          <p class="eyebrow mb-8 reveal">Currently reading</p>
+          <ul id="reading" class="divide-y divide-border/60 max-w-3xl"></ul>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="page" data-page="/contact">
+        <div class="px-6 md:px-10 max-w-3xl mx-auto py-24 md:py-40">
+          <p class="eyebrow mb-6 text-center reveal">Contact</p>
+          <h1 class="display-xl text-center reveal" style="font-size: clamp(2.5rem, 7vw, 5.5rem)">Let's work together.</h1>
+          <p class="text-muted text-center mt-6 max-w-md mx-auto font-light reveal">I'm currently looking for product design roles and considered freelance projects.</p>
+
+          <form id="contact-form" class="mt-20 space-y-10 reveal">
+            <div class="border-b border-border pb-3 focus-within:border-foreground transition-colors">
+              <label for="name" class="eyebrow block mb-3">Name</label>
+              <input id="name" name="name" required class="w-full bg-transparent outline-none text-base md:text-lg font-light" />
+            </div>
+            <div class="border-b border-border pb-3 focus-within:border-foreground transition-colors">
+              <label for="email" class="eyebrow block mb-3">Email</label>
+              <input id="email" name="email" type="email" required class="w-full bg-transparent outline-none text-base md:text-lg font-light" />
+            </div>
+            <div class="border-b border-border pb-3 focus-within:border-foreground transition-colors">
+              <label for="message" class="eyebrow block mb-3">Message</label>
+              <textarea id="message" name="message" rows="4" required class="w-full bg-transparent outline-none text-base md:text-lg font-light resize-none"></textarea>
+            </div>
+            <div class="flex items-center justify-between pt-4">
+              <button id="submit-btn" type="submit" class="text-sm border-b border-foreground/60 hover:border-foreground pb-1 transition-colors">Send message →</button>
+            </div>
+          </form>
+
+          <div class="mt-24 pt-10 border-t border-border/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm reveal">
+            <a href="mailto:hello@alexmorgan.design" class="text-muted hover:text-foreground transition-colors">hello@alexmorgan.design</a>
+            <a href="https://linkedin.com/in/your-handle" target="_blank" rel="noreferrer" class="text-muted hover:text-foreground transition-colors">LinkedIn ↗</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="relative z-10 border-t border-border/60 py-10 px-6 md:px-10 mt-20">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted">
+        <span>© 2025 Alex Morgan</span>
+        <span class="eyebrow">Designed & built with care</span>
+      </div>
+    </footer>
+
+    <script>
+      // ====== DATA ======
+      const projects = [
+        { slug: "northwind", title: "Northwind", description: "Reimagining the booking flow for a regional airline.", category: "Product", year: "2025", size: "large", cover: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1600&q=80" },
+        { slug: "atlas", title: "Atlas", description: "Type system for a public transit wayfinding project.", category: "Visual", year: "2024", size: "large", cover: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=1600&q=80" },
+        { slug: "field-notes", title: "Field Notes", description: "Diary studies on focus & deep work.", category: "Research", year: "2024", size: "small", cover: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&q=80" },
+        { slug: "lumen", title: "Lumen", description: "Ambient lighting controller for the home.", category: "Product", year: "2023", size: "small", cover: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=1200&q=80" },
+      ];
+      const skills = ["Figma", "Prototyping", "Design systems", "User research", "Wireframing", "Motion", "HTML & CSS", "Accessibility", "Interaction design", "Workshop facilitation"];
+      const reading = [
+        { title: "The Design of Everyday Things", author: "Don Norman" },
+        { title: "Hara — Designing Design", author: "Kenya Hara" },
+        { title: "Working", author: "Robert Caro" },
+      ];
+
+      // ====== RENDER ======
+      const featured = document.getElementById("featured-grid");
+      featured.innerHTML = projects.map(p => `
+        <a href="#/works/${p.slug}" class="group block reveal ${p.size === 'large' ? 'md:col-span-4' : 'md:col-span-2'}">
+          <div class="aspect-[4/3] overflow-hidden bg-secondary rounded-sm">
+            <img src="${p.cover}" alt="${p.title}" loading="lazy" class="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.03]" />
+          </div>
+          <div class="mt-5 flex items-start justify-between gap-4">
+            <div>
+              <h3 class="text-base md:text-lg font-medium tracking-tight">${p.title}</h3>
+              <p class="text-sm text-muted mt-1">${p.description}</p>
+            </div>
+            <span class="eyebrow whitespace-nowrap mt-1">${p.category}</span>
+          </div>
+        </a>
+      `).join("");
+
+      const filters = ["All", "Product", "Visual", "Research"];
+      let activeFilter = "All";
+      const filtersEl = document.getElementById("filters");
+      const worksGrid = document.getElementById("works-grid");
+      function renderFilters() {
+        filtersEl.innerHTML = filters.map(f => `
+          <button data-filter="${f}" class="text-sm px-4 py-2 rounded-full transition-colors ${f === activeFilter ? 'bg-foreground text-background' : 'text-muted hover:text-foreground'}">${f}</button>
+        `).join("");
+        filtersEl.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+          activeFilter = b.dataset.filter;
+          renderFilters(); renderWorks();
+        }));
+      }
+      function renderWorks() {
+        const list = activeFilter === "All" ? projects : projects.filter(p => p.category === activeFilter);
+        worksGrid.innerHTML = list.map(p => `
+          <a href="#/works/${p.slug}" class="group block reveal">
+            <div class="aspect-[4/3] overflow-hidden bg-secondary rounded-sm relative">
+              <img src="${p.cover}" alt="${p.title}" loading="lazy" class="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.03]" />
+            </div>
+            <div class="mt-5 flex items-start justify-between gap-4">
+              <div>
+                <h2 class="text-lg md:text-xl font-medium tracking-tight">${p.title}</h2>
+                <p class="text-sm text-muted mt-1">${p.description}</p>
+              </div>
+              <div class="text-right">
+                <span class="eyebrow block">${p.category}</span>
+                <span class="text-xs text-muted mt-1 block">${p.year}</span>
+              </div>
+            </div>
+          </a>
+        `).join("");
+        revealAll();
+      }
+      renderFilters(); renderWorks();
+
+      document.getElementById("skills").innerHTML = skills.map(s => `<li>${s}</li>`).join("");
+      document.getElementById("reading").innerHTML = reading.map(b => `
+        <li class="flex items-baseline justify-between py-5">
+          <span class="text-base md:text-lg font-light">${b.title}</span>
+          <span class="text-sm text-muted">${b.author}</span>
+        </li>
+      `).join("");
+
+      function renderCaseStudy(slug) {
+        const p = projects.find(x => x.slug === slug);
+        const el = document.getElementById("case-study");
+        if (!p) {
+          el.innerHTML = `<div class="px-6 py-40 text-center"><p class="eyebrow mb-4">Not found</p><h1 class="display-lg text-3xl mb-6">This case study doesn't exist.</h1><a href="#/works" class="text-sm border-b border-foreground/40 hover:border-foreground pb-0.5">Back to works</a></div>`;
+          return;
+        }
+        const idx = projects.findIndex(x => x.slug === slug);
+        const next = projects[(idx + 1) % projects.length];
+        el.innerHTML = `
+          <header class="px-6 md:px-10 max-w-7xl mx-auto pt-12 md:pt-20 pb-16">
+            <p class="eyebrow mb-6 reveal">${p.category} — ${p.year}</p>
+            <h1 class="display-xl max-w-4xl reveal" style="font-size: clamp(2.5rem, 7vw, 6rem)">${p.title}.</h1>
+            <p class="mt-8 text-lg md:text-xl text-muted max-w-2xl font-light reveal">${p.description}</p>
+          </header>
+          <div class="w-full aspect-[16/9] bg-secondary overflow-hidden reveal">
+            <img src="${p.cover}" alt="${p.title} hero" loading="lazy" class="w-full h-full object-cover" />
+          </div>
+          <section class="px-6 md:px-10 max-w-7xl mx-auto py-24 md:py-32 grid grid-cols-1 md:grid-cols-12 gap-10">
+            <p class="eyebrow md:col-span-3 reveal">Problem</p>
+            <p class="md:col-span-9 text-xl md:text-2xl font-light leading-relaxed max-w-3xl reveal">Users were abandoning the flow at the second step. We needed to understand why — and rebuild the moment of decision with less friction and more honesty.</p>
+          </section>
+          <div class="border-t border-border/60"></div>
+          <section class="px-6 md:px-10 max-w-7xl mx-auto py-24 md:py-32">
+            <p class="eyebrow mb-12 reveal">Process</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+              <div class="reveal">
+                <div class="aspect-[4/3] bg-secondary overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=1200&q=80" alt="Process" loading="lazy" class="w-full h-full object-cover" />
+                </div>
+              </div>
+              <div class="reveal">
+                <h3 class="text-2xl md:text-3xl font-light mb-6 tracking-tight">Listening before drawing.</h3>
+                <p class="text-muted leading-relaxed">Six diary studies, eleven interviews, and a week of close reading. The interface emerged from the language people already used.</p>
+              </div>
+            </div>
+          </section>
+          <div class="border-t border-border/60"></div>
+          <section class="px-6 md:px-10 max-w-7xl mx-auto py-24 md:py-32 grid grid-cols-1 md:grid-cols-12 gap-10">
+            <p class="eyebrow md:col-span-3 reveal">Outcome</p>
+            <div class="md:col-span-9 space-y-12 reveal">
+              <p class="text-xl md:text-2xl font-light leading-relaxed max-w-3xl">Drop-off at the decision step fell by 38%. The team adopted the new pattern across two adjacent surfaces within the quarter.</p>
+              <dl class="grid grid-cols-3 gap-6 max-w-2xl pt-4">
+                <div><dt class="display-lg text-3xl md:text-4xl">−38%</dt><dd class="eyebrow mt-2">Drop-off</dd></div>
+                <div><dt class="display-lg text-3xl md:text-4xl">+12%</dt><dd class="eyebrow mt-2">Completion</dd></div>
+                <div><dt class="display-lg text-3xl md:text-4xl">4.6/5</dt><dd class="eyebrow mt-2">Satisfaction</dd></div>
+              </dl>
+            </div>
+          </section>
+          <section class="px-6 md:px-10 max-w-7xl mx-auto py-24 border-t border-border/60">
+            <a href="#/works/${next.slug}" class="group block reveal">
+              <p class="eyebrow mb-3">Next project</p>
+              <h2 class="display-lg text-4xl md:text-6xl group-hover:translate-x-2 transition-transform duration-500">${next.title} →</h2>
+            </a>
+          </section>
+        `;
+        revealAll();
+      }
+
+      // ====== ROUTER ======
+      function route() {
+        const hash = location.hash.replace(/^#/, "") || "/";
+        const pages = document.querySelectorAll(".page");
+        pages.forEach(p => p.classList.remove("active"));
+        document.querySelectorAll(".nav-link").forEach(a => a.classList.toggle("active", a.dataset.route === hash || (hash.startsWith("/works") && a.dataset.route === "/works")));
+
+        let match;
+        if (hash === "/") match = "/";
+        else if (hash === "/works") match = "/works";
+        else if (hash.startsWith("/works/")) { match = "/works/:slug"; renderCaseStudy(hash.slice(7)); }
+        else if (hash === "/about") match = "/about";
+        else if (hash === "/contact") match = "/contact";
+        else match = "/";
+
+        const el = document.querySelector(`.page[data-page="${match}"]`);
+        if (el) el.classList.add("active");
+        window.scrollTo(0, 0);
+        revealAll();
+      }
+      window.addEventListener("hashchange", route);
+
+      // ====== REVEAL ON SCROLL ======
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("is-visible"); io.unobserve(e.target); } });
+      }, { threshold: 0.1, rootMargin: "0px 0px -10% 0px" });
+      function revealAll() {
+        document.querySelectorAll(".reveal:not(.is-visible)").forEach(el => io.observe(el));
+      }
+
+      // ====== CONTACT ======
+      document.getElementById("contact-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        document.getElementById("submit-btn").textContent = "Sent — thank you.";
+      });
+
+      // ====== INIT ======
+      route();
+      setTimeout(() => { document.getElementById("loader").style.display = "none"; }, 1800);
+    </script>
+  </body>
+</html>
